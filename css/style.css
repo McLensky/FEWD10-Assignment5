@@ -1,0 +1,512 @@
+/*
+Project Name: Assignment 5
+Client: Your Client
+Author: Dan Pelensky
+Developer @GA in Melbourne
+*/
+
+
+/******************************************
+/* SETUP
+/*******************************************/
+
+
+/* Box Model Hack */
+
+* {
+    -moz-box-sizing: border-box;
+    /* Firexfox */
+    -webkit-box-sizing: border-box;
+    /* Safari/Chrome/iOS/Android */
+    box-sizing: border-box;
+    /* IE */
+}
+
+
+/* Clear fix hack */
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clear {
+    clear: both;
+}
+
+.alignright {
+    float: right;
+    padding: 0 0 0.625rem 0.625rem;
+    /* note the padding around a right floated image */
+}
+
+.alignleft {
+    float: left;
+    padding: 0 0.625rem 0.625rem 0;
+    /* note the padding around a left floated image */
+}
+
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+body {
+    color: #f0efef;
+    font-size: 1.63rem;
+    line-height: 1.4;
+    color: #606161;
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    font-weight: 300;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+
+/* Center the container */
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+header {
+    background: #033048;
+    padding: 1.563rem 0;
+    overflow: hidden;
+}
+
+header .logo {
+    color: #fff;
+    float: left;
+}
+
+header nav {
+    float: right;
+    margin-top: 0.938rem;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 0 0 2.5rem;
+    font-size: 1.5rem;
+}
+
+header nav ul li a {
+    color: #f9e42e;
+}
+
+#hero {
+    height: 43.75rem;
+    background: url(../images/header_bg.jpg) no-repeat top center #131e27;
+    padding-top: 2rem;
+}
+
+#hero .logo {
+    color: #fff;
+}
+
+#hero h2 {
+    font-size: 3rem;
+    text-align: center;
+    color: #fff;
+    margin: 7.5rem 0 5.625rem;
+    font-weight: 600;
+}
+
+.button {
+    border-radius: 0.313rem;
+    font-weight: 800;
+    padding: 0.75rem 0;
+    max-width: 17.5rem;
+    font-size: 1.75rem;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+}
+
+.yellow {
+    background: #f9e42e;
+    color: #033048;
+}
+
+.blue {
+    background: #033048;
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+#benefits {
+    padding: 6.25rem 0 5rem;
+}
+
+h3 {
+    color: #033048;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 2.5rem;
+}
+
+#benefits p,
+#benefits ul {
+    max-width: 37.5rem;
+}
+
+#benefits ul {
+    list-style: disc;
+    margin: 1.875rem 0 0 5rem;
+}
+
+#testimonial {
+    background: url(../images/testimonial_bg.jpg) no-repeat top center #071324;
+    padding: 4.375rem 0 4.375rem;
+    color: #fff;
+}
+
+blockquote {
+    font-size: 2.25rem;
+    font-weight: 300;
+    font-style: italic;
+    text-align: center;
+    max-width: 36.25rem;
+    margin: 0 auto;
+}
+
+blockquote span {
+    font-weight: 600;
+    display: block;
+    font-style: normal;
+}
+
+#main {
+    margin-top: 5rem;
+}
+
+#posts {
+    max-width: 43.75rem;
+    display: inline-block;
+    margin-right: 1.25rem;
+    vertical-align: top;
+}
+
+#sidebar {
+    max-width: 15rem;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.post {
+    border-bottom: 0.063rem solid #043049;
+    padding-bottom: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.post h2 {
+    font-weight: 600;
+    font-size: 2.5rem;
+    line-height: 1.3;
+    margin-bottom: 1.875rem;
+}
+
+.post h2 a {
+    color: #043049;
+}
+
+.post img {
+    margin-bottom: 1.88rem;
+}
+
+.post p {
+    font-size: 1.5rem;
+    line-height: 1.333;
+    color: #606161;
+}
+
+.post p:first-of-type:first-letter {
+    float: left;
+    font-size: 5rem;
+    line-height: 4.06rem;
+    padding-top: 0.25rem;
+    padding-right: 0.5rem;
+    padding-left: 0.19rem;
+    font-weight: 600;
+}
+
+.readmore {
+    text-align: right;
+    margin-top: 1.88rem;
+}
+
+.readmore a {
+    color: #043049;
+    font-weight: 600;
+}
+
+
+/*.button {
+  border-radius: 0.31rem;
+  font-weight: 800;
+  padding: 0.75rem 0;
+  width: 17.5rem;
+  font-size: 1.75rem;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+}
+.yellow {
+  background: #f9e42e;
+  color: #033048;
+}
+.blue {
+  background: #033048;
+  color: #fff;
+  font-size: 1.5rem;
+}*/
+
+#sidebar h3 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 0.94rem;
+    color: #043049;
+}
+
+#sidebar ul {
+    margin-bottom: 2.5rem;
+}
+
+#sidebar ul li a {
+    color: #043049;
+    font-size: 1.5rem;
+}
+
+#sidebar p {
+    font-size: 1.38rem;
+    line-height: 1.1;
+    margin-bottom: 2.5rem;
+}
+
+#sidebar p a {
+    color: #043049;
+    font-weight: 600;
+}
+
+#bottom-cta {
+    background: #f9e42e;
+    padding: 1.88rem;
+    text-align: center;
+}
+
+footer {
+    background: #121212;
+    padding: 4.06rem 0 2.81rem;
+    text-align: center;
+}
+
+footer .logo {
+    color: #f9e42e;
+    margin-bottom: 4.25rem;
+}
+
+footer ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 0 1.63rem 4.69rem;
+}
+
+footer p {
+    font-size: 1.13rem;
+    color: #fff;
+    font-weight: 600;
+}
+
+.hamburger {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        max-width: 100%;
+        font-size: 1rem;
+    }
+    
+    header {
+    padding: 0.7815rem 0;
+       }
+    
+    .logo {
+        font-size: 3rem;
+    }
+    
+    .container,
+    #benefits {
+        margin: none;
+    }
+    
+    .hamburger {
+        display: block;
+        padding: 1.25rem;
+        color: #f9e42e;
+    }
+    header nav ul {
+        display: none;
+        position: absolute;
+        
+        right: 0;
+    }
+    header nav ul li {
+        display: block;
+        background: #033048;
+        font-size: 1em;
+    }
+    
+    
+    nav li {
+        border-bottom: 1px solid #f9e42e;
+        padding: 0.75em 1.5em;
+    }
+
+    
+    #hero {
+        height: 20em;
+        padding-top: none;
+        background-size: cover;
+    }
+    
+    #hero h2 {
+        font-size: 2rem;
+        margin: 2.5rem 0 3rem;
+    }
+    .button {
+        padding: 0.5rem 0;
+        max-width: 15rem;
+        font-size: 1.5rem;
+    }
+    #benefits {
+        padding: 2.5rem 0 3rem;
+    }
+    h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+    #benefits ul {
+        margin: 1rem 0 0 2.667rem;
+    }
+    
+    #testimonial {
+        background: url(../images/testimonial_bg.jpg) no-repeat top center #071324;
+        padding: 4.375rem 0 4.375rem;
+        color: #fff;
+    }
+    
+    blockquote {
+        font-size: 1.25rem;
+    }
+    
+    .blue {
+        font-size: 1rem;
+    }
+
+    #bottom-cta {
+        background: #f9e42e;
+        padding: 1.88rem;
+        text-align: center;
+    }
+    
+    #posts {
+        max-width: 100%;
+    }
+    
+    #posts img {
+        max-height: 100%;
+        max-width: 100%;
+    }
+    
+    .post {
+        border-bottom: 0.063rem solid #043049;
+        padding-bottom: 1rem;
+        margin-bottom: 1em;
+    }
+
+    .post h2 {
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+    }
+
+    .post img {
+        margin-bottom: 1.88rem;
+    }
+
+    .post p {
+        font-size: 1rem;
+
+    }
+
+    .post p:first-of-type:first-letter {
+        float: left;
+        font-size: 5rem;
+        line-height: 4.06rem;
+        padding-top: 0.25rem;
+        padding-right: 0.5rem;
+        padding-left: 0.19rem;
+        font-weight: 600;
+    }
+    
+    #sidebar img {
+        display: none;
+    }
+    
+    #sidebar h3 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    #sidebar ul {
+        margin-bottom: 1.25rem;
+    }
+
+    #sidebar ul li a {
+        font-size: 1.25rem;
+    }
+
+    #sidebar p {
+        font-size: 1rem;
+        margin-bottom: 1.25rem;
+    }
+    
+    .readmore {
+        margin-top: 1rem;
+    }  
+
+    footer {
+        padding: 2.03rem 0 1.405rem;
+    }
+
+    footer .logo {
+        margin-bottom: 2.125rem;
+    }
+
+    footer ul li {
+        margin: 0 0.815rem 2.345rem;
+    }
+
+    footer p {
+        font-size: 0.75rem;
+    }
+   
+}
